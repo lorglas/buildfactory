@@ -547,7 +547,7 @@ File_array$(8)="yabasic.h"
 File_array$(9)="YabInterface.h"
 File_array$(10)="YabList.h"
 File_array$(11)="YabMain.cpp"
-for i=1 to 11
+for i=0 to 11
 	if(IfExists(This_dir$+"/"+File_array$(i))) then
 		print "File "+File_array$(i)+ " ok"
 	else
