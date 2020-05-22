@@ -171,8 +171,8 @@ REM ######Fenteraufbau######
 	WindowSize_x=800
 	WindowSize_y=600
 	
-	ProgrammName$="BuildFactory"	
-	Start_FensterName$="BuildFactory"
+	ProgrammName$="BeSly-BuildFactory"	
+	Start_FensterName$="BeSly-BuildFactory"
 	NameView$="Programme"
 	FileView$="Filename"
 	buildDir$="/boot/home/yab_work/BuildFactory"
@@ -191,7 +191,7 @@ REM ######Fenteraufbau######
 	STV_x = VIEW GET "STV1", "Width"
 	text1$="Input file"
 	text2$="Output file"
-	text3$="App-sign"
+	text3$="App-sig"
 	Draw text 10,28, text1$, Stackview$+"1"
 	Draw text 10,68, text2$, Stackview$+"1"
 	Draw text 10,108, text3$, Stackview$+"1"
