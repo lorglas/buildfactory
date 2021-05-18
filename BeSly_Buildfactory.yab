@@ -353,7 +353,7 @@ sub About()
   	
   	TEXTEDIT 10,200 TO STV2_x-10, STV2_y-40, "not_implemented", 0, "View_About"
   	TEXTEDIT SET "not_implemented", "bold", "12"
-	textedit add "not_implemented", translate$("New in this revision")+" 0.0.2:\n"
+	textedit add "not_implemented", translate$("New in this revision")+" 2.4.4:\n"
   	TEXTEDIT SET "not_implemented", "plain", "12"
 	textedit add "not_implemented", "- "+translate$("Localization added\n")
 	textedit add "not_implemented", "\n"
