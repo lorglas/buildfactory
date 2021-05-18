@@ -1,0 +1,19 @@
+1	de	x-vnd.BeSly_Buildfactory	1365940899
+Build was successful.			Erstellung erfolgreich.
+Build failed!			Erstellung fehlgeschlagen
+Developers:			Entwickler:
+Contact:			Kontakt:
+Website:			Webseite:
+Bug-Reporting:			Fehler-Meldung:
+New in this revision			Neu in dieser Version
+Localization added\n			Übersetzung eingefügt\n
+First init.\n			Erste Version.\n
+Create binary			Erstelle Datei
+Input file			Quelldatei
+Output file			Zieldatei
+Type here your the source file in.			Geben Sie hier Ihre Quelldatei ein.
+Type here your target file, please without the \".yab\". If you enterd the text with \".yab\", then the \".yab\" will be automaticly deleted.			Geben Sie hier Ihre Zieldatei ein, bitte ohne das ". yab". Wenn Sie den Text mit ". yab" eingeben, wird das ". yab" automatisch gelöscht.
+Type here your app-sign in or do nothing. If you blank this line, then the standart sign will be used.			Geben Sie hier Ihre App-Signature ein. Wenn Sie diese Zeile auslassen, wird die Standard Signatur verwendet.
+Drop here the source file.			Ziehen Sie hier ihre Quelldatei rein.
+Drop here the target file.			Ziehen Sie hier ihre Zieldatei rein.
+Drop here the app-sign.			Ziehen Sie hier ihre App-Signatur rein.

@@ -71,11 +71,11 @@ sub main()
 					window close Start_FensterName$
 				break
 				case Start_FensterName$+"1:Program:Quit|"
-				case Start_FensterName$+"1:Programm:Beenden|"
+				//case Start_FensterName$+"1:Programm:Beenden|"
 					window close Start_FensterName$
 				break				
 				case Start_FensterName$+"1:Program:About|"
-				case Start_FensterName$+"1:Programm:Über|"
+				//case Start_FensterName$+"1:Programm:Über|"
 					about()
 				break	
 				case "close|"
@@ -182,8 +182,8 @@ REM ######Fenteraufbau######
 	window set  Start_FensterName$, "MinimumTo", WindowSize_x,WindowSize_y
 	window set  Start_FensterName$, "MaximumTo", WindowSize_x,WindowSize_y
 	
-	
-	Header("Build Factory", Start_FensterName$, WindowSize_x)
+	localize "x-vnd.BeSly_Buildfactory"
+	Header(Start_FensterName$, Start_FensterName$, WindowSize_x)
 	Footer("BeSly Software Solutions", Start_FensterName$, WindowSize_x)
 	
 	STACKVIEW 0,40 TO WindowSize_x,WindowSize_y-40, Stackview$, 2, Start_FensterName$
@@ -200,7 +200,7 @@ REM ######Fenteraufbau######
 	TEXTCONTROL 100,50 TO 600,70, "Outputfile", "", "target", Stackview$+"1"
 	TEXTCONTROL 100,90 TO 600,110, "appsign", "", "application/x-vnd.yab-app", Stackview$+"1"
 	TOOLTIP "Inputfile", "Type here your the source file in."
-	TOOLTIP "Outputfile", "Type here your target file, please without the \".yab\". If you enterd the text with \".yab\", then the \".yab\" will be automaticly deleted"
+	TOOLTIP "Outputfile", "Type here your target file, please without the \".yab\". If you enterd the text with \".yab\", then the \".yab\" will be automaticly deleted."
 	TOOLTIP "appsign", "Type here your app-sign in or do nothing. If you blank this line, then the standart sign will be used."
 	
 	VIEW 610,12 TO 680,32, "DZ1", Stackview$+"1"
@@ -215,11 +215,11 @@ REM ######Fenteraufbau######
 	Draw text 5,15, "Dropzone","DZ1"
 	Draw text 5,15, "Dropzone","DZ2"
 	Draw text 5,15, "Dropzone", "DZ3"
-	TOOLTIP "DZ1", "Drop here the source file"
-	TOOLTIP "DZ2", "Drop here the target file"
-	TOOLTIP "DZ3", "Drop here the app-sign "
+	TOOLTIP "DZ1", "Drop here the source file."
+	TOOLTIP "DZ2", "Drop here the target file."
+	TOOLTIP "DZ3", "Drop here the app-sign."
 	
-	button WindowSize_x-110,10 to WindowSize_x-10,115, "Build", "Create Binary", Stackview$+"1"
+	button WindowSize_x-110,10 to WindowSize_x-10,115, "Build", "Create binary", Stackview$+"1"
 
 	MyLine(0,125,WindowSize_x,125, Stackview$+"1")
 	textedit 10,135 to STV_x-10,STV_y-10, "BuildOutput", 3, Stackview$+"1"
@@ -314,9 +314,9 @@ sub start()
 		
 	textedit add "BuildOutput", result$
 	if(IfExists(buildDir$+"/"+binName$)) then
-		alert "Build was successful", "Ok", "info"
+		alert translate$("Build was successful."), "Ok", "info"
 	else
-		alert "Build failed!", "Ok", "warning"
+		alert translate$("Build failed!"), "Ok", "warning"
 	endif
 		system("rm "+ buildDir$+"/"+binName$)
 		option set "Inputfile", "enabled", True
@@ -337,25 +337,30 @@ sub About()
   	DRAW TEXT 10,60, "Name:", "View_About"
   	DRAW TEXT 10,80, "Version / Build:", "View_About"
   	DRAW TEXT 10,100, "Version Status:", "View_About"
-  	DRAW TEXT 10,120, "Developers:", "View_About"  
-  	DRAW TEXT 10,140, "Contact:", "View_About"
-  	DRAW TEXT 10,160, "Website:", "View_About"
-  	DRAW TEXT 10,180, "Bug-Reporting:", "View_About"	
+  	DRAW TEXT 10,120, translate$("Developers:"), "View_About"  
+  	DRAW TEXT 10,140, translate$("Contact:"), "View_About"
+  	DRAW TEXT 10,160, translate$("Website:"), "View_About"
+  	DRAW TEXT 10,180, translate$("Bug-Reporting:"), "View_About"	
    	
    	DRAW TEXT 150,60, ProgrammName$, "View_About"
-  	DRAW TEXT 150,80, "0.0.1/ 17.04.2020", "View_About"
+  	DRAW TEXT 150,80, "0.0.2/ 18.05.2021", "View_About"
   	DRAW TEXT 150,100, "Alpha", "View_About"
   	DRAW TEXT 150,120, "Lorglas", "View_About"
   	DRAW SET "system-plain,regular,16,regular,0,45" ,"View_About"
   	TEXTURL 150,131, "email", "webmaster@besly.de", "webmaster@besly.de", "View_About"  	
-  	TEXTURL 150,151, "website", "http://software.besly.de", "http://software.besly.de", "View_About"   	
-  	//TEXTURL 150,167, "Bug-Report", "http://trac.besly.de", "http://trac.besly.de", "View_About" 
+  	TEXTURL 150,151, "website", "https://software.besly.de", "http://software.besly.de", "View_About"   	
+  	TEXTURL 150,167, "Bug-Report", "https://trac.besly.de", "http://trac.besly.de", "View_About" 
   	
   	TEXTEDIT 10,200 TO STV2_x-10, STV2_y-40, "not_implemented", 0, "View_About"
   	TEXTEDIT SET "not_implemented", "bold", "12"
-  	textedit add "not_implemented", "New in this Revision:\n"
+	textedit add "not_implemented", translate$("New in this revision")+" 0.0.2:\n"
   	TEXTEDIT SET "not_implemented", "plain", "12"
-  	//textedit add "not_implemented", "Brightness Slider under Colorcontrol\n"
+	textedit add "not_implemented", "- "+translate$("Localization added\n")
+	textedit add "not_implemented", "\n"
+	TEXTEDIT SET "not_implemented", "bold", "12"
+  	textedit add "not_implemented", translate$("New in this revision")+" 0.0.1:\n"
+  	TEXTEDIT SET "not_implemented", "plain", "12"
+  	textedit add "not_implemented", "- "+translate$("First init.\n")
   	//textedit add "not_implemented", "New in this Revision:\n"
   	TEXTEDIT SET "not_implemented", "editable", false
 	button (STV2_x/2)-50, STV2_y-30 to (STV2_x/2)+50, STV2_y-10, "close", "Close",  "View_About"	

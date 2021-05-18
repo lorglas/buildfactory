@@ -1,0 +1,19 @@
+1	English	x-vnd.BeSly_Buildfactory	1365940899
+Build was successful.			Build was successful.
+Build failed!			Build failed!
+Developers:			Developers:
+Contact:			Contact:
+Website:			Website:
+Bug-Reporting:			Bug-Reporting:
+New in this revision			New in this revision
+Localization added\n			Localization added\n
+First init.\n			First init.\n
+Create binary			Create binary
+Input file			Input file
+Output file			Output file
+Type here your the source file in.			Type here your the source file in.
+Type here your target file, please without the \".yab\". If you enterd the text with \".yab\", then the \".yab\" will be automaticly deleted.			Type here your target file, please without the \".yab\". If you enterd the text with \".yab\", then the \".yab\" will be automaticly deleted.
+Type here your app-sign in or do nothing. If you blank this line, then the standart sign will be used.			Type here your app-sign in or do nothing. If you blank this line, then the standart sign will be used.
+Drop here the source file.			Drop here the source file.
+Drop here the target file.			Drop here the target file.
+Drop here the app-sign.			Drop here the app-sign.
