@@ -49,7 +49,7 @@ fi
 
 // set some global variables here
 AppName$	= "BuildFactory"
-VERSION$	= " 2.4.3"
+VERSION$	= " 2.4.4"
 TMP_folder$	= "/boot/var/tmp/BUILD_FACTORY_TMP/"
 Lib_path$	= "/boot/home/config/settings/yab/"
 
@@ -552,7 +552,7 @@ for i=0 to 11
 		print "File "+File_array$(i)+ " ok"
 	else
 		print "File "+File_array$(i)+" not ok. The app copy it from source is available, otherwise reinstall package."
-		output$=system$("cp /boot/system/develop/yab-1.8/"+File_array$(i)+" "+This_dir$+"/"+File_array$(i))
+		output$=system$("cp /boot/system/develop/yab-1.8.0/"+File_array$(i)+" "+This_dir$+"/"+File_array$(i))
 		print output$
 	endif
 next i
