@@ -552,7 +552,7 @@ for i=0 to 11
 		print "File "+File_array$(i)+ " ok"
 	else
 		print "File "+File_array$(i)+" not ok. The app copy it from source is available, otherwise reinstall package."
-		output$=system$("cp /boot/system/develop/yab-1.8.1/"+File_array$(i)+" "+This_dir$+"/"+File_array$(i))
+		output$=system$("cp /boot/system/develop/yab-1.8.2/"+File_array$(i)+" "+This_dir$+"/"+File_array$(i))
 		print output$
 	endif
 next i
