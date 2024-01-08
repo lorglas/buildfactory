@@ -8,5 +8,6 @@ yabasic.bison
 yabasic.flex
 yabasic.h
 YabInterface.h
+YabInterface.cpp
 YabList.h
 YabMain.cpp
