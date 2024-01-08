@@ -431,7 +431,7 @@ sub BuildFactory(f$)
 	close(handle)
 	
 	print "Dumping file..."
-	print DumpProg(f$)
+	print "DumpProg("+f$+")"
 	DumpProg(f$)
 	
 	// times have changed :)
