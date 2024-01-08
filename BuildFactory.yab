@@ -1,7 +1,7 @@
 #!/boot/system/bin/yab
 
 //////////////////////////////////////
-// BuildFactory v 2.4.4
+// BuildFactory v 2.4.5
 //////////////////////////////////////
 
 // find out in which directory we are
@@ -49,7 +49,7 @@ fi
 
 // set some global variables here
 AppName$	= "BuildFactory"
-VERSION$	= " 2.4.4"
+VERSION$	= " 2.4.5"
 TMP_folder$	= "/boot/var/tmp/BUILD_FACTORY_TMP/"
 Lib_path$	= "/boot/home/config/settings/yab/"
 
@@ -545,6 +545,7 @@ File_array$(6)="yabasic.bison"
 File_array$(7)="yabasic.flex"
 File_array$(8)="yabasic.h"
 File_array$(9)="YabInterface.h"
+File_array$(9)="YabInterface.cpp"
 File_array$(10)="YabList.h"
 File_array$(11)="YabMain.cpp"
 for i=0 to 11
