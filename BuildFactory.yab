@@ -1,7 +1,7 @@
 #!/boot/system/bin/yab
 
 //////////////////////////////////////
-// BuildFactory v 2.4.5
+// BuildFactory v 2.4.4
 //////////////////////////////////////
 
 // find out in which directory we are
@@ -41,7 +41,7 @@ if (system(YAB$+" -version")) then
 	print "Please make sure you have a yab binary in"
 	print "\t"+left$(This_dir$, len(This_dir$)-1)
 	print "or"
-	print "\t/boot/home/config/non-packaged"
+	print "\t/home/config/bin"
 	print "or"
 	print "\t/system/bin\n"
 	exit 1
@@ -431,7 +431,7 @@ sub BuildFactory(f$)
 	close(handle)
 	
 	print "Dumping file..."
-	print "DumpProg("+f$+")"
+	print
 	DumpProg(f$)
 	
 	// times have changed :)
@@ -545,15 +545,16 @@ File_array$(6)="yabasic.bison"
 File_array$(7)="yabasic.flex"
 File_array$(8)="yabasic.h"
 File_array$(9)="YabInterface.h"
-File_array$(9)="YabInterface.cpp"
 File_array$(10)="YabList.h"
 File_array$(11)="YabMain.cpp"
 for i=0 to 11
 	if(IfExists(This_dir$+"/"+File_array$(i))) then
 		print "File "+File_array$(i)+ " ok"
+			output$=system$("cp --update /boot/system/develop/yab-1.8.2/"+File_array$(i)+" "+This_dir$+"/"+File_array$(i))
+	
 	else
 		print "File "+File_array$(i)+" not ok. The app copy it from source is available, otherwise reinstall package."
-		output$=system$("cp /boot/system/develop/yab-1.8.2/"+File_array$(i)+" "+This_dir$+"/"+File_array$(i))
+		output$=system$("cp /boot/system/develop/yab-1.8.0/"+File_array$(i)+" "+This_dir$+"/"+File_array$(i))
 		print output$
 	endif
 next i
