@@ -7,13 +7,13 @@
 // find out in which directory we are
 if (peek("isbound")) then
 	This_dir$ = peek$("directory")+"/"
-		print This_dir$+" found 1"
+		//print This_dir$+" found 1"
 else
-	This_dir$ = trim$(system$("pwd")) 
-	if (This_dir$ = "/boot/home/yab_work/BuildFactory") then
+	This_dir$ = trim$(system$("pwd"))
+		if (This_dir$ = "/boot/home/yab_work/BuildFactory") then
 		
 	else
-		This_dir$ = trim$(system$("pwd"))+"/yab_work/BuildFactory"
+		This_dir$ = trim$(system$("pwd"))+"/"
 		//print This_dir$+" found 2"
 	endif
 fi
@@ -573,6 +573,10 @@ local b$
 local b
 local a
 local i
+
+//print peek("version")
+//print "------------"
+
 a = system(YAB$+" -v >& "+This_dir$+"/yabver")
 i=open(This_dir$+"/yabver")
 line input #i a$
@@ -582,6 +586,6 @@ b=instr(a$, b$)
 a$=left$( a$, b-1 )
 a$=trim$(a$)
 close i
-print "a$ "+a$
+//print "a$ "+a$
 return a$
 end sub
