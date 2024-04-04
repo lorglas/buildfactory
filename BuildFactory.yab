@@ -1,7 +1,7 @@
 #!/boot/system/bin/yab
 
 //////////////////////////////////////
-// BuildFactory v 2.4.4
+// BuildFactory v 2.4.6
 //////////////////////////////////////
 
 // find out in which directory we are
@@ -50,7 +50,7 @@ fi
 
 // set some global variables here
 AppName$	= "BuildFactory"
-VERSION$	= " 2.4.5"
+VERSION$	= " 2.4.6"
 TMP_folder$	= "/boot/var/tmp/BUILD_FACTORY_TMP/"
 Lib_path$	= "/boot/home/config/settings/yab/"
 YVERSION$ = getver$()
